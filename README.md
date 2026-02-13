@@ -24,7 +24,8 @@ Malla (Mesh): Los datos puros (puntos y líneas).
 Objeto: El "contenedor" que sostiene esa malla.
 Vincular: Poner ese objeto dentro de la escena para que lo puedas ver.
 
-4.Aquí es donde ocurre la magia. Para que el polígono sea perfecto (como un hexágono o un pentágono), el código imagina que hay un círculo invisible.
+4.
+Aquí es donde ocurre la magia. Para que el polígono sea perfecto (como un hexágono o un pentágono), el código imagina que hay un círculo invisible.
 El ángulo: Divide los 360 grados del círculo entre el número de lados.
 Coseno y Seno: Son funciones matemáticas que le dicen a Blender: "Si estoy en este ángulo y a esta distancia del centro, pon el punto aquí".
 
@@ -51,11 +52,10 @@ bpy.ops.object.delete()
 
 def crear_poligono_2d(nombre, lados, radio):
     
-    malla = bpy.data.meshes.new(nombre)
-    objeto = bpy.data.objects.new(nombre, malla)
+malla = bpy.data.meshes.new(nombre)
+objeto = bpy.data.objects.new(nombre, malla)
 
-  
-    bpy.context.collection.objects.link(objeto)
+bpy.context.collection.objects.link(objeto)
 
     vertices = []
     aristas = []
