@@ -1,5 +1,5 @@
 # Creaci-n-de-Pol-gonos-en-Blender-
-Esto es parte de mis tareas de Graficación de la carrera ingeniería en sistemas computacionales, empezamos con un código divertido.
+**Esto es parte de mis tareas de Graficación de la carrera ingeniería en sistemas computacionales, empezamos con un código divertido.**
 
 Abrimos Blender y vamos a una ventana llamada Scripts(estara al final).
 
@@ -46,36 +46,32 @@ https://github.com/MitziBibble/Creaci-n-de-Pol-gonos-en-Blender-/issues/1#issue-
 import bpy
 import math
 
-# Limpiar la escena
 bpy.ops.object.select_all(action='SELECT')
 bpy.ops.object.delete()
 
 def crear_poligono_2d(nombre, lados, radio):
-    # Crear malla y objeto
+    
     malla = bpy.data.meshes.new(nombre)
     objeto = bpy.data.objects.new(nombre, malla)
 
-    # Vincular a la escena
+  
     bpy.context.collection.objects.link(objeto)
 
     vertices = []
     aristas = []
 
-    # Calcular vértices (polígono regular)
+    
     for i in range(lados):
         angulo = 2 * math.pi * i / lados
         x = radio * math.cos(angulo)
         y = radio * math.sin(angulo)
         vertices.append((x, y, 0))  # Z = 0 para 2D
 
-    # Crear aristas
     for i in range(lados):
         aristas.append((i, (i + 1) % lados))
 
-    # Crear la malla
+
     malla.from_pydata(vertices, aristas, [])
     malla.update()
 
-# Llamada a la función
-# Cambia lados o radio si quieres otro polígono
 crear_poligono_2d("Poligono2D", lados=6, radio=5)
