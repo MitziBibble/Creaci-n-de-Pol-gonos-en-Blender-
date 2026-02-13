@@ -51,7 +51,7 @@ bpy.ops.object.delete()
 
 def crear_poligono_2d(nombre, lados, radio):
     
-    malla = bpy.data.meshes.new(nombre)
+    malla = bpy.data.meshes.new(nombre)
     objeto = bpy.data.objects.new(nombre, malla)
 
   
