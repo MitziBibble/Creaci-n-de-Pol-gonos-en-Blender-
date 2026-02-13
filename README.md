@@ -1,4 +1,4 @@
-# Creaci-n-de-Pol-gonos-en-Blender-
+# Creacion de Poligonos en Blender
 **Esto es parte de mis tareas de Graficación de la carrera ingeniería en sistemas computacionales, empezamos con un código divertido.**
 
 Abrimos Blender y vamos a una ventana llamada Scripts(estara al final).
